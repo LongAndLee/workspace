@@ -1,4 +1,6 @@
-class BankAccount {
+package inheritance;
+
+public class bankAccount {
 	
 	String firstName;
 	String lastName;
@@ -7,7 +9,7 @@ class BankAccount {
 	
 	
 	
-	BankAccount(String firstName, String lastName, String accountID){
+	bankAccount(String firstName, String lastName, String accountID){
 		this.balance = 0;
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -15,14 +17,12 @@ class BankAccount {
 	}
 	
 	void deposit(double amount) {
+		System.out.println("adding $" + amount + "\n");
 		balance += amount; 
 	}
 	
 	double withdraw(double amount){
-		if( amount < this.balance ) {
-			return this.balance += amount;
-		}
-		return -1;
+			return this.balance -= amount;
 	}
 	
 	void setFirstName(String firstName) {
@@ -33,26 +33,28 @@ class BankAccount {
 		this.lastName = lastName;
 	}
 	
-	double getBalance() {
-		return balance;
+	void getBalance() {
+		System.out.println("Balance: " + this.balance + "\n");
 	}
 	
 	void getname() {
 		System.out.println("First Name: " + this.firstName);
-		System.out.println("Last Name: " + this.lastName);
+		System.out.println("Last Name: " + this.lastName + "\n");
 	}
 	
 	void getiD(){
-		System.out.println("AccountID: " + this.accountID);
+		System.out.println("AccountID: " + this.accountID + "\n");
 	}
 	
 	void accountSummary() {
 		System.out.println("First Name: " + this.firstName);
 		System.out.println("Last Name: " + this.lastName);
 		System.out.println("AccountID: " + this.accountID);
-		System.out.println("Balance: " + this.firstName);
+		System.out.println("Balance: " + this.balance + "\n");
 	}
 	
-
+		
 	
 }
+
+	
