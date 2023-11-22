@@ -2,6 +2,7 @@ package inheritance;
 
 public class bankAccount {
 	
+	
 	String firstName;
 	String lastName;
 	String accountID;
@@ -16,12 +17,12 @@ public class bankAccount {
 		this.accountID = accountID;
 	}
 	
-	void deposit(double amount) {
+	public void deposit(double amount) {
 		System.out.println("adding $" + amount + "\n");
 		balance += amount; 
 	}
 	
-	double withdraw(double amount){
+	public double withdraw(double amount){
 			return this.balance -= amount;
 	}
 	
@@ -33,13 +34,17 @@ public class bankAccount {
 		this.lastName = lastName;
 	}
 	
-	void getBalance() {
+	public double getBalance() {
 		System.out.println("Balance: " + this.balance + "\n");
+		
+		return balance;
 	}
 	
-	void getname() {
+	public String getname() {
 		System.out.println("First Name: " + this.firstName);
 		System.out.println("Last Name: " + this.lastName + "\n");
+		
+		return firstName + " " + lastName;
 	}
 	
 	void getiD(){

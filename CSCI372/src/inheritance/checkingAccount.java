@@ -6,7 +6,7 @@ public class checkingAccount extends bankAccount{
 	double interestRate;
 	int overdraftFee;
 	
-	checkingAccount(String firstName, String lastName, String accountID) {
+	public checkingAccount(String firstName, String lastName, String accountID) {
 		super(firstName, lastName, accountID);
 		this.interestRate = -.15;
 		this.overdraftFee = 30;
