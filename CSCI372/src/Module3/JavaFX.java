@@ -10,7 +10,8 @@ import javafx.scene.layout.VBox;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import java.util.Random;
-
+import java.io.FileWriter;   
+import java.io.IOException;
 import java.time.ZonedDateTime;
 
 public class JavaFX extends Application implements EventHandler<ActionEvent>{
@@ -20,6 +21,7 @@ public class JavaFX extends Application implements EventHandler<ActionEvent>{
 	Button colorButton;
 	Button exitButton;
 	Label timeLabel;
+	String time;
 	
 	public static void main(String[] args) {
 		launch(args);
@@ -32,6 +34,13 @@ public class JavaFX extends Application implements EventHandler<ActionEvent>{
 			x = rand.nextInt(99);
 		}
 		return x;
+	}
+	
+	public String getTime() {
+		ZonedDateTime time = ZonedDateTime.now();
+		String now =  time.toString();
+		
+		return now.substring(11,16);
 	}
 	
 	public String randomColor() {
@@ -50,21 +59,37 @@ public class JavaFX extends Application implements EventHandler<ActionEvent>{
 		Scene scene = new Scene(vbox, 300, 300);
 		
 		timeLabel = new Label("0:00");
+		
 		timeButton = new Button("Show Time");
 		timeButton.setOnAction(new EventHandler<ActionEvent>() {
 
 			@Override
 			public void handle(ActionEvent arg0) {
-				ZonedDateTime time = ZonedDateTime.now();
-				String now =  time.toString();
-				timeLabel.setText("Time: " + now.substring(11,16));
-				System.out.print(now.substring(11,16));
-				
+				time = getTime();
+				timeLabel.setText("Time: " + time);
 			}
 			
 		});
 		
 		logButton = new Button("Log Time");
+		logButton.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent arg0) {
+				
+				try {
+				      FileWriter myWriter = new FileWriter("log.txt");
+				      myWriter.write("Time: " + time + "\n");
+				      myWriter.close();
+				      System.out.println("Successfully wrote to the file.");
+				    } catch (IOException e) {
+				      System.out.println("An error occurred.");
+				      e.printStackTrace();
+				    }
+				
+			}
+			
+		});
 		
 		colorButton = new Button("Change background");
 		colorButton.setOnAction(new EventHandler<ActionEvent>() {
