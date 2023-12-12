@@ -12,14 +12,21 @@ public class Circle extends Shape{
 	
 	@Override
 	public double area() {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return area = 3.14 * radius * radius;
+		
 	}
 
 	@Override
 	public double perimeter() {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return perimeter = 2 * 3.14 * radius;
+		
 	}
 
+	@Override
+	public String toString() {
+		return "Circle Area: " + area + " Circumference: " + perimeter;
+	}
+	
 }

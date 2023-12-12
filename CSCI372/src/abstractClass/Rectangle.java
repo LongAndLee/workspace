@@ -28,8 +28,7 @@ public class Rectangle extends Shape {
 	
 	@Override
 	public String toString(){
-		System.out.println("Area: " + area + " Perimeter: " + perimeter );
-		return null;
+		return "Rectangle Area: " + area + " Perimeter: " + perimeter;
 	}
 	
 }
