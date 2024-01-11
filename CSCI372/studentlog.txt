@@ -1,0 +1,5 @@
+Time: Name: hughie | address: california | gpa: 1.4
+Time: Name: kevin | address: new york | gpa: 2.0
+Time: Name: lee | address: california | gpa: 3.5
+Time: Name: lucy | address: orlando | gpa: 4.0
+Time: Name: maddy | address: texas | gpa: 2.7
